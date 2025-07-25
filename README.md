@@ -1,6 +1,6 @@
 # Devsinc Clone - Frontend Practice Project
 
-A frontend clone of the official [Devsic Organization](https://devsinc.com) website built with **Next.js** and **Tailwind CSS**. This project is created for learning and practicing modern web development using component-based architecture, utility-first styling, and responsive design principles.
+A frontend clone of the official [Devsinc Organization](https://devsinc.com) website built with **Next.js** and **Tailwind CSS**. This project is created for learning and practicing modern web development using component-based architecture, utility-first styling, and responsive design principles.
 
 ---
 

@@ -13,6 +13,9 @@ html, body {
 }
 
 @theme{
+  --screens-sm: '390px';
+  --screens-md: '769px';
+  --screens-lg: '1200px';
   --color-primary: #0ebab1;
   --animate-scroll-left: scrollLeft 30s linear infinite;
   --animate-scroll-right: scrollRight 30s linear infinite;

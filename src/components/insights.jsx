@@ -53,7 +53,7 @@ const images = [
 
 const Insights = () => {
     return (
-        <div className='relative my-20 px-5 z-10'>
+        <div className='relative mt-20 px-5 z-10'>
             <div className='absolute right-0 bottom-0 w-[50%] h-[60%] bg-[#0aa29b]/80 blur-3xl rounded-tl-[5rem] z-0' />
             <div className='relative grid grid-cols-1 gap-4 lg:grid-cols-3 z-10'>
                 <div className='flex flex-col items-start gap-2 my-4'>

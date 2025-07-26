@@ -1,6 +1,5 @@
 import React from "react";
 
-// Images list
 const images = [
   { id: 1, src: "pics/1.png", alt: "Client 1" },
   { id: 2, src: "pics/2.png", alt: "Client 2" },
@@ -32,7 +31,6 @@ const images = [
 const Clients = () => {
   return (
     <div className="w-full bg-white py-10 overflow-hidden">
-      {/* Row 1: left to right */}
       <div className="whitespace-nowrap animate-scroll-left">
         {images.map((img) => (
           <img
@@ -43,8 +41,6 @@ const Clients = () => {
           />
         ))}
       </div>
-
-      {/* Row 2: right to left */}
       <div className="whitespace-nowrap animate-scroll-right mt-6">
         {images.map((img) => (
           <img

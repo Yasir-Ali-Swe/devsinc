@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const MenuLinks = ({theme}) => {
   return (
     <div className='py-6 pl-8 '>
-        <ul className='flex flex-col items-start lg:flex-row lg:items-center lg:justify-center md:gap-2 gap-8'>
+        <ul className='flex flex-col items-start lg:flex-row lg:items-center lg:justify-center md:gap-5 gap-8'>
             <li>
                 <div className='cursor-pointer flex gap-2 lg:gap-[1px] items-center'>
                     <h1 className={`${theme ? "text-white" : "text-black"} uppercase text-base lg:text-sm font-thin`}>What we do</h1>

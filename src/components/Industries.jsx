@@ -16,7 +16,7 @@ const industries = [
 const arrow = "https://cdn.prod.website-files.com/6719ad0ceed6d5aa24a83d61/67330872fcc18762b4703730_right%20arrow.svg"
 const Industries = () => {
     return (
-        <div className='w-screen h-auto py-15 px-4'>
+        <div className='w-full overflow-x-hidden h-auto py-15 px-4'>
             <h1 className='text-4xl text-black font-black py-10 md:text-center '>Discover our Impact Across Industries</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 px-2 md:px-8'>
                 {

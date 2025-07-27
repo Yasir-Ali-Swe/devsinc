@@ -103,7 +103,7 @@ const Contact = () => {
                         <div className='py-5'>
                             <h1>I am looking for job in devsinc</h1>
                             <select className='w-full border border-gray-300 rounded-lg px-3 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-primary'>
-                                <option value="" disabled selected>Select an option</option>
+                                <option  value="" disabled defaultValue={"Select an option"}>Select an option</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>

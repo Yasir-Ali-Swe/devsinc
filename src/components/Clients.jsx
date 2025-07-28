@@ -37,7 +37,7 @@ const Clients = () => {
             key={img.id}
             src={img.src}
             alt={img.alt}
-            className="inline-block w-24 h-24 object-contain mx-4"
+            className="inline-block w-30 object-contain mx-4"
           />
         ))}
       </div>

@@ -3,6 +3,7 @@
 
 body{
   font-family: 'ITC Avant Garde Pro Md', sans-serif;
+  overflow-x: hidden;
 }
 
 .scrollbar-hide {

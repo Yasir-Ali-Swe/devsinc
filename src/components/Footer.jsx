@@ -42,9 +42,9 @@ const img = [
 ]
 const Footer = () => {
     return (
-        <div className='my-8 px-10' >
+        <div className='my-8 px-10 relative z-30' >
             <div>
-                <div className='relative'>
+                <div className='relative z-20'>
                     <span className=' bg-primary w-15 h-15 rounded-r-full block'></span>
                     <span className='block absolute bg-[#0a3a53] w-5 h-5 rounded-full -top-1 left-8'></span>
                 </div>
@@ -76,11 +76,11 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="flex flex-wrap gap-10 py-10 md:flex-row">
+                <div className="flex flex-wrap gap-10 py-10 md:flex-row relative z-20">
                     {img.map((item) => (
                         <div
                             key={item.id}
-                            className="w-full md:w-[45%] lg:w-[30%] bg-white  "
+                            className="w-full md:w-[45%] lg:w-[30%]   "
                         >
                             <div className='flex gap-2 items-center'>
                                 <h1 className="text-2xl font-semibold mb-2">{item.H1}</h1>
@@ -108,13 +108,14 @@ const Footer = () => {
                         </h1>
                     </div>
                     <div className='flex gap-4 text-2xl md:pr-20  md:mb-20'>
-                        <FaFacebookSquare  className='md:size-10'/>
-                        <FaLinkedin  className='md:size-10'/>
-                        <FaInstagramSquare  className='md:size-10'/>
-                        <FaXTwitter  className='md:size-10'/>
+                        <FaFacebookSquare className='md:size-10' />
+                        <FaLinkedin className='md:size-10' />
+                        <FaInstagramSquare className='md:size-10' />
+                        <FaXTwitter className='md:size-10' />
                     </div>
                 </div>
             </div>
+            <img src="featured/bg1.avif" alt="bgimg" className='w-130 absolute bottom-0 right-0 z-0' />
         </div>
     )
 }

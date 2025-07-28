@@ -1,4 +1,17 @@
+"use client";
 import React from 'react'
+import { motion } from "framer-motion";
+import {useTheme} from "@/context/ThemeContext";
+const textAnimation = {
+  hidden: { y: 100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.7 }
+  }
+};
+
+
 
 const industries = [
     { id: 1, tittle: "Travel & Hospitality", src: "https://cdn.prod.website-files.com/6719ad0ceed6d5aa24a83dcf/67489aa3c274b240610bc25b_Artboard%201%20copy%203.svg" },
@@ -15,17 +28,18 @@ const industries = [
 
 const arrow = "https://cdn.prod.website-files.com/6719ad0ceed6d5aa24a83d61/67330872fcc18762b4703730_right%20arrow.svg"
 const Industries = () => {
+    const {theme}=useTheme();
     return (
-        <div className='w-full overflow-x-hidden h-auto py-15 px-4'>
-            <h1 className='text-4xl text-black font-black py-10 md:text-center '>Discover our Impact Across Industries</h1>
+        <div className={`w-full overflow-x-hidden h-auto py-15 px-4 transition-all duration-1000 ${theme ? "bg-black text-white" : "bg-white text-black"}`}>
+            <motion.h1 variants={textAnimation} className={`text-4xl ${theme ? "text-white" : "text-black"} text-black font-black py-10 md:text-center`}>Discover our Impact Across Industries</motion.h1>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 px-2 md:px-8'>
                 {
                     industries.map((industry) => (
-                        <div key={industry.id} className='group flex items-center gap-4 p-4 bg-white border-b'>
-                            <img src={industry.src} alt={industry.tittle} className='w-16 h-16 object-contain' />
+                        <div key={industry.id} className={`group flex items-center gap-4 p-4 ${!theme ? "bg-white" : ""} border-b`}>
+                            <img src={industry.src} alt={industry.tittle} className='size-24 object-contain' />
                             <div className='flex items justify-between w-full'>
                                 <h2 className='text-xl font-semibold'>{industry.tittle}</h2>
-                                <img src={arrow} alt="Right Arrow" className='size-5 opacity-0 group-hover:opacity-100' />
+                                <img src={arrow} alt="Right Arrow" className='size-8 transition-all duration-700 opacity-0 group-hover:opacity-100' />
                             </div>
                         </div>
                     ))

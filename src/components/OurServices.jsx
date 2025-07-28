@@ -1,5 +1,27 @@
 "use client";
-import React, { useState ,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
+import { useTheme } from '@/context/ThemeContext';
+const containerAnimation = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.5
+    }
+  }
+};
+
+const textAnimation = {
+  hidden: { y: 100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.7 }
+  }
+};
+
+
+
 
 const services = [
   { id: 1, title: 'Generative AI', img: 'services/101.webp' },
@@ -37,7 +59,7 @@ const OurServices = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 390); 
+      setIsMobile(window.innerWidth < 390);
     };
 
     checkScreenSize();
@@ -49,23 +71,26 @@ const OurServices = () => {
     if (showAll) return services;
     return isMobile ? services.slice(0, 1) : services.slice(0, 4);
   };
-
+  //bg-[linear-gradient(to_right,white_0%,#dbf4f3_50%,white_100%)]
   const visibleServices = getVisibleServices();
-
+  const { theme } = useTheme()
   return (
-    <div className="bg-[linear-gradient(to_right,white_0%,#dbf4f3_50%,white_100%)] py-16 px-4">
-      <div className="max-w-7xl mx-auto mb-12">
-        <h1 className="text-[#0ebab1] tracking-wide uppercase font-medium text-lg mb-2">
+    <div className={`${theme ? ' bg-black' : 'bg-[linear-gradient(to_right,white_0%,#dbf4f3_50%,white_100%)]'} relative py-16 px-4 z-40`}>
+      {
+        theme === true && (<div className="absolute inset-y-0 left-1/2 w-[60%]  -translate-x-1/2 bg-primary opacity-20 rounded-lg blur-2xl z-0"></div>)
+      }
+      <motion.div variant={containerAnimation} initial="hidden" animate="visible" className="max-w-7xl mx-auto mb-12">
+        <motion.h1 variants={textAnimation} className="text-[#0ebab1] tracking-wide uppercase font-medium text-lg mb-2">
           Our Services
-        </h1>
-        <h2 className="text-4xl text-black font-bold">Transform Your Business</h2>
-      </div>
+        </motion.h1>
+        <motion.h2 variants={textAnimation} className="text-4xl bg-gradient-to-r from-[#0c4764] to-primary bg-clip-text text-transparent font-bold">Transform Your Business</motion.h2>
+      </motion.div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6">
+      <div variant={containerAnimation} initial="hidden" animate="visible" className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6">
         {visibleServices.map((service) => (
-          <div
+          <motion.div
             key={service.id}
-            className="relative w-full h-[300px] rounded-xl overflow-hidden group shadow-lg"
+            className="relative w-full h-[300px] rounded-xl overflow-hidden group shadow-lg z-30"
           >
             <img
               src={service.img}
@@ -76,7 +101,7 @@ const OurServices = () => {
             <h3 className="absolute bottom-4 left-4 z-20 text-white text-xl font-semibold">
               {service.title}
             </h3>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -94,3 +119,4 @@ const OurServices = () => {
 };
 
 export default OurServices;
+

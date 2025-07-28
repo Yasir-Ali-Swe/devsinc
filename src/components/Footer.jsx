@@ -1,13 +1,15 @@
+"use client"
 import React from 'react'
 import { IoIosArrowDown } from "react-icons/io";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
-import { FaInstagramSquare } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { useTheme } from '@/context/ThemeContext';
+
 const img = [
     {
         id: 1,
-        src: "countries/11.webp", H1: "Pakistan",
+        src: "countries/11.webp",
+        H1: "Pakistan",
         SPAN: "(Global Delivery Center)",
         ADDRESS: "Plot B, 281 Ghazi Rd, Khuda Buksh Colony KB Society, Lahore, Punjab"
     },
@@ -39,75 +41,51 @@ const img = [
         SPAN: "(Regional Office)",
         ADDRESS: "Al Murjanah Tower, Al Murjanah St, Al Murjanah, Riyadh 13315, Saudi Arabia"
     },
-]
+];
+
 const Footer = () => {
+    const { theme } = useTheme();
+
     return (
-        <div className='my-8 px-10 relative z-30' >
+        <div className={`transition-all duration-1000 py-8 px-10 relative z-30 ${theme ? "bg-black text-white" : "bg-white text-black"}`}>
             <div>
                 <div className='relative z-20'>
-                    <span className=' bg-primary w-15 h-15 rounded-r-full block'></span>
+                    <span className='bg-primary w-15 h-15 rounded-r-full block'></span>
                     <span className='block absolute bg-[#0a3a53] w-5 h-5 rounded-full -top-1 left-8'></span>
                 </div>
                 <div className='my-10'>
                     <ul className='flex flex-col gap-12'>
-                        <li>
-                            <div className='cursor-pointer flex gap-2 lg:gap-[1px] items-center'>
-                                <h1 className='text-black text-xl'>Company</h1>
-                                <IoIosArrowDown className={`text-primary  size-6 lg:size-4`} />
-                            </div>
-                        </li>
-                        <li>
-                            <div className='cursor-pointer flex gap-2 lg:gap-[1px] items-center'>
-                                <h1 className='text-black text-xl'>Industries We Serve</h1>
-                                <IoIosArrowDown className={`text-primary  size-6 lg:size-4`} />
-                            </div>
-                        </li>
-                        <li>
-                            <div className='cursor-pointer flex gap-2 lg:gap-[1px] items-center'>
-                                <h1 className='text-black text-xl'>Services And Solution</h1>
-                                <IoIosArrowDown className={`text-primary  size-6 lg:size-4`} />
-                            </div>
-                        </li>
-                        <li>
-                            <div className='cursor-pointer flex gap-2 lg:gap-[1px] items-center'>
-                                <h1 className='text-black text-xl'>Resources</h1>
-                                <IoIosArrowDown className={`text-primary  size-6 lg:size-4`} />
-                            </div>
-                        </li>
+                        {["Company", "Industries We Serve", "Services And Solution", "Resources"].map((item, i) => (
+                            <li key={i}>
+                                <div className='cursor-pointer flex gap-2 lg:gap-[4px] items-center'>
+                                    <h1 className='text-xl'>{item}</h1>
+                                    <IoIosArrowDown className='text-primary size-8 lg:size-6' />
+                                </div>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="flex flex-wrap gap-10 py-10 md:flex-row relative z-20">
                     {img.map((item) => (
-                        <div
-                            key={item.id}
-                            className="w-full md:w-[45%] lg:w-[30%]   "
-                        >
+                        <div key={item.id} className="w-full md:w-[45%] lg:w-[30%]">
                             <div className='flex gap-2 items-center'>
                                 <h1 className="text-2xl font-semibold mb-2">{item.H1}</h1>
-                                <h1 className='text-nowrap whitespace-nowrap'>{item.SPAN}</h1>
-                                <img
-                                    src={item.src}
-                                    alt={item.H1}
-                                    className="w-15 object-cover "
-                                />
+                                <h1 className='whitespace-nowrap'>{item.SPAN}</h1>
+                                <img src={item.src} alt={item.H1} className="w-15 object-cover" />
                             </div>
-                            <p className="text-gray-600 whitespace-pre-line">{item.ADDRESS}</p>
+                            <p className={`whitespace-pre-line ${theme ? "text-gray-300" : "text-gray-600"}`}>{item.ADDRESS}</p>
                         </div>
                     ))}
                 </div>
-                <h1 className='text-xl font-semibold text-black my-4'>
+                <h1 className='text-xl font-semibold my-4'>
                     global.business@devsinc.com
                 </h1>
-                <div className='flex items-center justify-between  md:pr-30'>
+                <div className='flex flex-col md:flex-row items-start md:items-center justify-between md:pr-30 gap-4'>
                     <div className='flex flex-col md:flex-row md:gap-15 gap-3'>
-                        <h1 className='text-xl'>
-                            Terms and Conditions
-                        </h1>
-                        <h1 className='text-xl'>
-                            Privacy Policy
-                        </h1>
+                        <h1 className='text-xl'>Terms and Conditions</h1>
+                        <h1 className='text-xl'>Privacy Policy</h1>
                     </div>
-                    <div className='flex gap-4 text-2xl md:pr-20  md:mb-20'>
+                    <div className='flex gap-4 text-2xl md:pr-20 md:mb-20'>
                         <FaFacebookSquare className='md:size-10' />
                         <FaLinkedin className='md:size-10' />
                         <FaInstagramSquare className='md:size-10' />
@@ -115,9 +93,13 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <img src="featured/bg1.avif" alt="bgimg" className='w-130 absolute bottom-0 right-0 z-0' />
+            {
+                !theme && (
+                    <div className='absolute top-0 left-0 w-full h-full  z-10'></div>
+                )
+            }
         </div>
-    )
+    );
 }
 
 export default Footer;

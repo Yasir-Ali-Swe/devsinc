@@ -43,10 +43,3 @@ const MenuLinks = ({theme}) => {
 export default MenuLinks
 
 
-
-    // < li >
-    // <button className='capitalize text-[12px] font-extralight bg-primary text-white px-3 py-2 rounded-4xl hover:bg-white hover:text-black hover:border-1 hover:border-primary transition-all duration-700' >Explore careers</button>
-    //             </li >
-    // <li>
-    //     <button className={`capitalize px-3 py-2 ${isOpen ? "bg-black hover:bg-primary text-primary hover:text-white" : "bg-white text-primary hover:bg-primary hover:text-white"} text-[12px]  rounded-4xl border-1 border-primary transition-all duration-700`}>Let's talk business</button>
-    // </li>

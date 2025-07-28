@@ -13,7 +13,7 @@ const img = [
 
 const Contact = () => {
     return (
-        <div className='px-8 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 relative'>
+        <div className='px-8 md:px-20 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 relative'>
             <div>
                 <h1 className='text-3xl font-bold bg-gradient-to-r from-[#0c4764] to-[#0da7a4] bg-clip-text text-transparent py-3'>Ready To Get Started</h1>
                 <h1 className='text-xl font-thin leading-9'>Connect with us to explore how we can deliver exceptional IT solutions for your needs.</h1>
@@ -57,6 +57,7 @@ const Contact = () => {
                             <h1 className='text-lg'>Your Region<span className='text-red-800'>*</span></h1>
 
                             <select className='w-full border border-gray-300 rounded-lg px-3 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-primary'>
+                                <option value="" disabled defaultValue={"Select Your Region"}>Select Your Region</option>
                                 <option value="Pkistan">Pakistan</option>
                                 <option value="India">India</option>
                                 <option value="Uk">UK</option>
@@ -68,31 +69,35 @@ const Contact = () => {
                             <div className='py-3'>
                                 <div className='flex items-center py-1'>
                                     <input type="checkbox" id='Remote' className='w-6 h-6 rounded-xl' />
-                                    <label className='ml-2 text-xl' htmlFor="Remote">A</label>
+                                    <label className='ml-2 text-xl' htmlFor="Remote">Remote IT Resources</label>
                                 </div>
                                 <div className='flex items-center py-1'>
                                     <input type="checkbox" id='B' className='w-6 h-6 rounded-xl' />
-                                    <label className='ml-2 text-xl' htmlFor="B">B</label>
+                                    <label className='ml-2 text-xl' htmlFor="B">Custom Software Development</label>
                                 </div>
                                 <div className='flex items-center py-1'>
                                     <input type="checkbox" id='C' className='w-6 h-6 rounded-xl' />
-                                    <label className='ml-2 text-xl' htmlFor="C">C</label>
+                                    <label className='ml-2 text-xl' htmlFor="C">Web Development</label>
                                 </div>
                                 <div className='flex items-center py-1'>
                                     <input type="checkbox" id='D' className='w-6 h-6 rounded-xl' />
-                                    <label className='ml-2 text-xl' htmlFor="D">D</label>
+                                    <label className='ml-2 text-xl' htmlFor="D">Mobile App Development</label>
                                 </div>
                                 <div className='flex items-center py-1'>
                                     <input type="checkbox" id='E' className='w-6 h-6 rounded-xl' />
-                                    <label className='ml-2 text-xl' htmlFor="E">E</label>
+                                    <label className='ml-2 text-xl' htmlFor="E">AR/VR</label>
                                 </div>
                                 <div className='flex items-center py-1'>
                                     <input type="checkbox" id='F' className='w-6 h-6 rounded-xl' />
-                                    <label className='ml-2 text-xl' htmlFor="F">F</label>
+                                    <label className='ml-2 text-xl' htmlFor="F">Gaming</label>
                                 </div>
                                 <div className='flex items-center py-1'>
                                     <input type="checkbox" id='G' className='w-6 h-6 rounded-xl' />
-                                    <label className='ml-2 text-xl' htmlFor="G">G</label>
+                                    <label className='ml-2 text-xl' htmlFor="G">Cyber Security</label>
+                                </div>
+                                <div className='flex items-center py-1'>
+                                    <input type="checkbox" id='H' className='w-6 h-6 rounded-xl' />
+                                    <label className='ml-2 text-xl' htmlFor="H">Other IT Services</label>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +122,7 @@ const Contact = () => {
             <div className='secondblock flex flex-col  gap-20 items-center  md:mx-20  sticky  md:mt-100 md:top-30 md:self-start'>
                 <div className='grid grid-cols-8'>
                     <div className='col-span-2'>
-                        <img src={img[0].src} alt="Contact Us" className='size-13 md:size-30 object-cover' />
+                        <img src={img[0].src} alt="Contact Us" className='size-13 md:size-20 object-cover' />
                     </div>
                     <div className='col-span-6 flex flex-col gap-3'>
                         <h1 className='text-3xl font-medium bg-gradient-to-r from-[#0c3a53] to-[#0c3a53] bg-clip-text text-transparent'>Global Presence</h1>
@@ -129,7 +134,7 @@ const Contact = () => {
                 </div>
                  <div className='grid grid-cols-8'>
                     <div className='col-span-2'>
-                        <img src={img[1].src} alt="Contact Us" className='size-10 md:size-30 object-cover' />
+                        <img src={img[1].src} alt="Contact Us" className='size-10 md:size-20 object-contain ' />
                     </div>
                     <div className='col-span-6 flex flex-col gap-3'>
                         <h1 className='text-3xl font-medium bg-gradient-to-r from-[#0c3a53] to-[#0c3a53] bg-clip-text text-transparent'>Global Leaders</h1>

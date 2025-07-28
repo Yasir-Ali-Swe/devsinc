@@ -1,7 +1,8 @@
 "use client";
 import React from 'react';
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useTheme } from '@/context/ThemeContext';
 const images = [
     {
         id: 1,
@@ -53,6 +54,7 @@ const images = [
     },
 ];
 const Insights = () => {
+    const { theme } = useTheme();
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -77,7 +79,7 @@ const Insights = () => {
 
 
     return (
-        <div ref={containerRef} className='relative mt-20 px-5 z-10'>
+        <div ref={containerRef} className={`${theme ? 'bg-black' : 'bg-white'} transition-all duration-1000 relative pt-20 px-5 z-10`}>
             <img src="featured/bg1.avif" alt="bgimg" className='absolute bottom-0 right-0 z-0' />
 
             <div className='relative grid grid-cols-1 gap-4 lg:grid-cols-3 z-10'>
@@ -92,7 +94,7 @@ const Insights = () => {
                     </button>
                 </div>
 
-                <div className='lg:col-span-2'>
+                <div className='lg:col-span-2 md:flex md:flex-col md:gap-4 md:justify-center'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                         <motion.div style={{ y: y1 }} className='flex flex-col gap-4'>
                             {column1.map((item) => (

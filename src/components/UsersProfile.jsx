@@ -25,7 +25,7 @@ const UsersProfile = () => {
     return (
         <div className='py-10 px-10 md:px-20 md:py-20'>
             <div className='flex justify-between items-center'>
-                <h1 className='text-3xl font-black leading-12'>Our Global Leadership</h1>
+                <h1 className='text-3xl bg-gradient-to-r from-[#0c4764] to-[#0da7a4] bg-clip-text text-transparent leading-12 md:mt-8'>Our Global Leadership</h1>
                 <div className='flex items-center gap-5'>
                     <div
                         onClick={scrollLeft}

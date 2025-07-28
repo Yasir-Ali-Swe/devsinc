@@ -16,9 +16,9 @@ const page = () => {
     <>
       <Navbar />
       <Hero />
+      <OurServices />
       <Clients />
       <Featured />
-      <OurServices />
       <Industries />
       <Insights />
       <Achievments />

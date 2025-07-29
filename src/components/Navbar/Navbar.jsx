@@ -69,7 +69,8 @@ const Navbar = () => {
   return (
     <div className={`${theme ? 'bg-black' : 'bg-white'} w-screen fixed top-0 z-50 px-5 md:px-10`}>
       <div className='flex items-center justify-between h-24'>
-        <img src='techXenLogo.png' alt='logo' />
+        {/* <img src='techXenLogo.png' alt='logo' /> */}
+        <h1 className={`text-2xl font-bold bg-gradient-to-r from-[#0c4764] to-[#0da7a4] bg-clip-text text-transparent py-3`}>TECHXEN SOLUTIONS</h1>
         <ThemeBtn theme={theme} setTheme={setTheme} />
         <div className='hidden lg:block'>
           <MenuLinks theme={theme} />

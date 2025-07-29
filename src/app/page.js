@@ -11,12 +11,14 @@ import Contact from '@/components/Contact.jsx'
 import Carriers from '@/components/Carriers.jsx'
 import UsersProfile from '@/components/UsersProfile.jsx'
 import Footer from '@/components/Footer.jsx'
+import Portfolio from '@/components/Portfolio';
 const page = () => {
   return (
     <>
       <Navbar />
       <Hero />
       <OurServices />
+      <Portfolio />
       <Clients />
       <Featured />
       <Industries />
